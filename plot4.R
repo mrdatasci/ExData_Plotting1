@@ -58,7 +58,7 @@ plot(epc$DateTime, epc$SubMetering1, type = "l",
      ylim = c(0, 38), xlab = "", ylab = "Energy sub metering")
 lines(epc$DateTime, epc$SubMetering2, type='l', col='red')
 lines(epc$DateTime, epc$SubMetering3, type='l', col='blue')
-legend("topright", lty = 1, col = c("black", "red", "blue"), 
+legend("topright", lty = 1, bty = "n", col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # upper-right plot
