@@ -51,7 +51,7 @@ par(mfcol = c(2, 2))
 
 # upper-left plot
 plot(epc$DateTime, epc$GlobalActivePower, type = "l", 
-     xlab = "", ylab = "Global Active Power (kilowatts)")
+     xlab = "", ylab = "Global Active Power")
 
 # lower-left plot
 plot(epc$DateTime, epc$SubMetering1, type = "l", 
