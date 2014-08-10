@@ -25,11 +25,16 @@ download.file(fileUrl, destfile = "./household_power_consumption.zip", method = 
 dateDownloaded <- date()
 unzip("./household_power_consumption.zip", exdir = "./")
 
-# Step 2: Read in data for 1/2/2007 and 2/2/2007 (rows 66638:69517) and add column names
+# Step 2: Read in data for 2007-02-01 and 2007-02-02 [rows 66638:69517, 2880 rows]
+# 1st row date time = 2006/12/16  17:24:00
+# elaspsed time until 2007-02-01 00:00:00 = 46 days 6.6 hours = 66636 minutes
+# skip 66637 rows (66636 minute-observations + header row)
+# subset 2880 rows for the two dates 2007-02-01 and 2007-02-02
 
 epc <- read.table("./household_power_consumption.txt", header = FALSE, sep = ";", 
                   stringsAsFactors = FALSE, skip = 66637, nrows = 2880)
 
+# add column names
 labels <- read.table("./household_power_consumption.txt", header = FALSE, sep = ";", 
                      stringsAsFactors = FALSE, nrows = 1)
 labels <- as.character(labels)
